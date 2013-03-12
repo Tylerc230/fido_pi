@@ -1,0 +1,120 @@
+<html>
+<head>
+  <style type="text/css">
+    .down{
+      transform:rotate(90deg);
+      -ms-transform:rotate(90deg); /* IE 9 */
+      -moz-transform:rotate(90deg); /* Firefox */
+      -webkit-transform:rotate(90deg); /* Safari and Chrome */
+      -o-transform:rotate(90deg); /* Opera */
+    }
+    .up{
+      transform:rotate(-90deg);
+      -ms-transform:rotate(-90deg); /* IE 9 */
+      -moz-transform:rotate(-90deg); /* Firefox */
+      -webkit-transform:rotate(-90deg); /* Safari and Chrome */
+      -o-transform:rotate(-90deg); /* Opera */
+    }
+    .left{
+      transform:rotate(180deg);
+      -ms-transform:rotate(180deg); /* IE 9 */
+      -moz-transform:rotate(180deg); /* Firefox */
+      -webkit-transform:rotate(180deg); /* Safari and Chrome */
+      -o-transform:rotate(180deg); /* Opera */
+    }
+    .right{
+    }
+  </style>
+</head>
+
+<body>
+  <button  onmousedown="forward()" onmouseup="stop()"> 
+    <img src="static/img/arrow.jpg" class="up"/>
+  </button>
+  <p/>
+  <button  onmousedown="turn_left()" onmouseup="stop()"> 
+    <img src="static/img/arrow.jpg" class="left"/>
+  </button>
+  <button  onmousedown="turn_right()" onmouseup="stop()"> 
+    <img src="static/img/arrow.jpg" class="right"/>
+  </button>
+  <p/>
+  <button  onmousedown="backward()" onmouseup="stop()"> 
+    <img src="static/img/arrow.jpg" class="down"/>
+  </button>
+</body>
+<script type="text/javascript">
+  document.onkeydown = keyDown; 
+  document.onkeyup = keyUp; 
+  var keyIsDown = 0;
+  function keyDown() 
+  { 
+    var KeyID = event.keyCode; 
+    if(KeyID==37 ) {
+      if (!keyIsDown) {
+        keyIsDown = 1;
+        turn_left();
+      }
+
+    } 
+    if(KeyID==38 ) {
+      if (!keyIsDown) {
+        keyIsDown = 1;
+        forward();
+      }
+    } 
+    if(KeyID==39 ) {
+      if (!keyIsDown) {
+        keyIsDown = 1;
+        turn_right();
+      }
+    }
+    if(KeyID==40) {
+      if (!keyIsDown) {
+        keyIsDown = 1;
+        backward();
+      }
+    } 
+  } 
+  function keyUp()
+  {
+    var KeyID = event.keyCode;
+    keyIsDown = 0;
+    stop();
+  }
+function turn_right()
+{
+  post_to_url("/robot/turnright")
+}
+
+function turn_left()
+{
+  post_to_url("/robot/turnleft")
+}
+
+function forward()
+{
+  post_to_url("/robot/forward")
+
+}
+
+function backward()
+{
+  post_to_url("/robot/backward")
+}
+
+function stop()
+{
+  post_to_url("/robot/stop")
+
+}
+
+function post_to_url(url)
+{
+  xmlHttp = new XMLHttpRequest(); 
+  xmlHttp.open( "GET", url, true );
+  xmlHttp.send( null );
+}
+
+</script>
+</html>
