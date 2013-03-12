@@ -25,14 +25,13 @@
 """Connect to a Roomba/Create and offer up an XMLRPC server interface."""
 
 import pyrobot
-import sys
 
 from SimpleXMLRPCServer import SimpleXMLRPCServer
 
 
 if __name__ == '__main__':
-  assert len(sys.argv) == 3
-  server = SimpleXMLRPCServer(sys.argv[1:])
+  #assert len(sys.argv) == 3
+  server = SimpleXMLRPCServer(('localhost', 9000), allow_none = True)
   server.register_introspection_functions()
   roomba = pyrobot.Roomba()
   server.register_instance(roomba)
