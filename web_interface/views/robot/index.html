@@ -84,12 +84,12 @@
   }
 function turn_right()
 {
-  post_to_url("/robot/turnright")
+  post_to_url("/robot/right")
 }
 
 function turn_left()
 {
-  post_to_url("/robot/turnleft")
+  post_to_url("/robot/left")
 }
 
 function forward()
@@ -100,7 +100,7 @@ function forward()
 
 function backward()
 {
-  post_to_url("/robot/backward")
+  post_to_url("/robot/reverse")
 }
 
 function stop()
@@ -112,7 +112,7 @@ function stop()
 function post_to_url(url)
 {
   xmlHttp = new XMLHttpRequest(); 
-  xmlHttp.open( "GET", url, true );
+  xmlHttp.open( "GET", "/web_interface" + url, true );
   xmlHttp.send( null );
 }
 
