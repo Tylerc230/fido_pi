@@ -1,12 +1,10 @@
 import wiringpi
 import struct
-import logging
 
 
 class Serial(object):
 
     def __init__(self, tty, baudrate, timeout):
-
         self.serial = wiringpi.Serial(tty, baudrate)
 
     def open(self):

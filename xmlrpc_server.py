@@ -30,9 +30,9 @@ from SimpleXMLRPCServer import SimpleXMLRPCServer
 
 
 if __name__ == '__main__':
-  #assert len(sys.argv) == 3
   server = SimpleXMLRPCServer(('localhost', 9000), allow_none = True)
   server.register_introspection_functions()
   roomba = pyrobot.Roomba()
+  roomba.Control()
   server.register_instance(roomba)
   server.serve_forever()
