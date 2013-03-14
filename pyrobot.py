@@ -450,9 +450,9 @@ class Roomba(object):
 
   """Represents a Roomba robot."""
 
-  def __init__(self, tty='/dev/ttyUSB0'):
+  def __init__(self, tty='/dev/ttyAMA0'):
     self.tty = tty
-    self.sci = SerialCommandInterface(tty, 57600)
+    self.sci = SerialCommandInterface(tty, 115200)
     self.sci.AddOpcodes(ROOMBA_OPCODES)
     self.sensors = RoombaSensors(self)
     self.safe = True
@@ -591,7 +591,7 @@ class Create(Roomba):
 
   """Represents a Create robot."""
 
-  def __init__(self, tty='/dev/ttyUSB0'):
+  def __init__(self, tty='/dev/ttyAMA0'):
     super(Create, self).__init__(tty)
     self.sci.AddOpcodes(CREATE_OPCODES)
     self.sensors = CreateSensors(self)
