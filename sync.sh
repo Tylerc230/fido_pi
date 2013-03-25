@@ -1,3 +1,4 @@
 #!/bin/bash
-rsync -a --progress ./* 192.168.2.2:~/code/pi_fido/
-rsync -a --progress ./web_interface 192.168.2.2:~/tools/web2py/applications
+IP=192.168.1.7
+rsync -a --progress ./* $IP:~/code/pi_fido/
+rsync -a --progress ./web_interface $IP:~/tools/web2py/applications
