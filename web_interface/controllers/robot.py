@@ -4,10 +4,10 @@ def index():
   return dict()
 
 def forward():
-  robot.DriveStraight(300)
+  robot.DriveStraight(150)
 
 def reverse():
-  robot.DriveStraight(-300)
+  robot.DriveStraight(-150)
 
 def right():
   robot.TurnInPlace(150, 'cw')
