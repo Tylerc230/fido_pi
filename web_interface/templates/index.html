@@ -112,7 +112,7 @@ function stop()
 function post_to_url(url)
 {
   xmlHttp = new XMLHttpRequest(); 
-  xmlHttp.open( "GET", "/web_interface" + url, true );
+  xmlHttp.open( "GET", url, true );
   xmlHttp.send( null );
 }
 
