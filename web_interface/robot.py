@@ -34,5 +34,5 @@ def stop():
   robot.Stop()
   return ""
 
-if __name__ == "__main__":
-  app.run(debug=True, host='192.168.1.7', port=80)
+def startWebInterface():
+  app.run(debug=True, host='192.168.2.2', port=80)
