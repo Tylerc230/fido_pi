@@ -28,8 +28,7 @@ import pyrobot
 
 from SimpleXMLRPCServer import SimpleXMLRPCServer
 
-
-if __name__ == '__main__':
+def startRoombaInterface():
   server = SimpleXMLRPCServer(('localhost', 9000), allow_none = True)
   server.register_introspection_functions()
   roomba = pyrobot.Roomba()
