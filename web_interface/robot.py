@@ -5,6 +5,10 @@ import xmlrpclib
 app = Flask(__name__)
 robot = xmlrpclib.ServerProxy('http://localhost:9000', allow_none=True)
 
+def startWebInterface():
+  app.run(debug=False, host='192.168.1.7', port=80)
+  return
+
 @app.route('/')
 def index():
   return render_template('index.html')
@@ -34,5 +38,3 @@ def stop():
   robot.Stop()
   return ""
 
-def startWebInterface():
-  app.run(debug=True, host='192.168.2.2', port=80)
