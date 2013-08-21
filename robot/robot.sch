@@ -2697,6 +2697,7 @@ High-power, low thermal resistance package.</description>
 <wire x1="-27.94" y1="-2.54" x2="-35.56" y2="-2.54" width="0.1524" layer="91"/>
 <wire x1="-27.94" y1="-5.08" x2="-27.94" y2="-2.54" width="0.1524" layer="91"/>
 <junction x="-27.94" y="-2.54"/>
+<label x="-35.56" y="0" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="IROBOT" gate="G$1" pin="1"/>
@@ -2749,6 +2750,7 @@ High-power, low thermal resistance package.</description>
 <wire x1="-25.4" y1="-63.5" x2="-25.4" y2="-66.04" width="0.1524" layer="91"/>
 <junction x="-25.4" y="-66.04"/>
 <pinref part="GND7" gate="1" pin="GND"/>
+<junction x="-25.4" y="-63.5"/>
 </segment>
 <segment>
 <pinref part="RASPBERRY_PI" gate="G$1" pin="6"/>
